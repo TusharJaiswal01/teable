@@ -151,7 +151,7 @@
         "desc": "Please enter your current password and your new email.",
         "current": "Enter your current password",
         "new": "Enter your new email",
-        "code": "Enter the verification code",
+        "code": ".",
         "getCode": "Get verification code",
         "error": {
           "invalidCode": "The verification code is invalid.",
