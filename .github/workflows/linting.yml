@@ -1,0 +1,47 @@
+name: Linting and Types
+
+on:
+  pull_request:
+    branches:
+      - develop
+    paths:
+      - 'apps/**'
+      - 'packages/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Linting and Types
+
+    strategy:
+      matrix:
+        node-version: [20.9.0]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/pnpm-install
+
+      - name: 🧩 Generate Prisma Client
+        working-directory: packages/db-main-prisma
+        run: |
+          pnpm -F @teable/db-main-prisma prisma-generate --schema ./prisma/postgres/schema.prisma
+
+      - name: 🏗 Run build
+        run: |
+          pnpm -F "./packages/**" run build
+
+      - name: 🕵️ Typecheck
+        run: |
+          pnpm g:typecheck
+
+      - name: 🔬 Linter
+        run: |
+          pnpm g:lint
+          pnpm g:lint-styles

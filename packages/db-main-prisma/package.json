@@ -1,0 +1,78 @@
+{
+  "name": "@teable/db-main-prisma",
+  "version": "1.8.0",
+  "license": "MIT",
+  "homepage": "https://github.com/teableio/teable",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teableio/teable",
+    "directory": "packages/db-main-prisma"
+  },
+  "author": {
+    "name": "tea artist",
+    "url": "https://github.com/tea-artist"
+  },
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "prisma"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf ./dist ./coverage ./tsconfig.tsbuildinfo ./node_modules/.cache ./.eslintcache",
+    "dev": "tsc --watch",
+    "fix-all-files": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs --fix",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/db-main-prisma.eslintcache",
+    "prisma-generate": "prisma generate",
+    "prisma-migrate": "dotenv-flow -p ../../apps/nextjs-app -- pnpm prisma migrate",
+    "prisma-migrate-reset": "dotenv-flow -p ../../apps/nextjs-app -- pnpm prisma migrate reset",
+    "prisma-db-push": "dotenv-flow -p ../../apps/nextjs-app -- pnpm prisma db push",
+    "prisma-db-seed": "dotenv-flow -p ../../apps/nextjs-app -- pnpm prisma db seed",
+    "prisma-studio": "dotenv-flow -p ../../apps/nextjs-app -- pnpm prisma studio",
+    "test": "run-s test-unit",
+    "test-unit": "echo \"No unit tests yet\"",
+    "test-e2e": "echo \"No e2e tests yet\"",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "@prisma/client": "^5.0.0",
+    "@nestjs/common": "^10.0.0",
+    "nestjs-cls": "^4.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "6.2.1",
+    "prisma": "6.2.1",
+    "nanoid": "3.3.7"
+  },
+  "devDependencies": {
+    "@httpx/dsn-parser": "1.8.4",
+    "@faker-js/faker": "8.4.1",
+    "@teable/eslint-config-bases": "workspace:^",
+    "@types/node": "20.9.0",
+    "@types/bcrypt": "5.0.2",
+    "camelcase": "8.0.0",
+    "cross-env": "7.0.3",
+    "dotenv-flow-cli": "1.1.1",
+    "eslint": "8.57.0",
+    "handlebars": "4.7.8",
+    "is-port-reachable": "3.1.0",
+    "mustache": "4.2.0",
+    "npm-run-all2": "6.1.2",
+    "picocolors": "1.0.0",
+    "prettier": "3.2.5",
+    "rimraf": "5.0.5",
+    "tsx": "4.7.1",
+    "typescript": "5.4.3",
+    "bcrypt": "5.1.1"
+  },
+  "prisma": {
+    "seed": "tsx ./prisma/seed.ts"
+  }
+}

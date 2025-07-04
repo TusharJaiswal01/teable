@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2022",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "module": "CommonJS",
+    "noEmit": false,
+    "sourceMap": true,
+    "allowJs": false,
+    "outDir": "./dist",
+    "paths": {
+      "@teable/core": ["../../packages/core/src"],
+      "@teable/openapi": ["../../packages/openapi/src"],
+      "@teable/db-main-prisma": ["../../packages/db-main-prisma/src"],
+    },
+    "types": ["vitest/globals"],
+  },
+  "exclude": ["**/node_modules", "**/.*/", "dist"],
+}

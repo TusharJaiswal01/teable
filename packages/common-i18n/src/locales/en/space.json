@@ -1,0 +1,68 @@
+{
+  "initialSpaceName": "{{name}}'s space",
+  "action": {
+    "createBase": "Create a base",
+    "createSpace": "Create a space",
+    "invite": "Invite"
+  },
+  "allSpaces": "All spaces",
+  "spaceIsEmpty": "This space is empty",
+  "baseModal": {
+    "copy": "Copy",
+    "duplicate": "Duplicate \"{{baseName}}\"",
+    "createBaseFromTemplate": "Create base from template",
+    "duplicateRecords": "Duplicate records",
+    "duplicateRecordsTip": "Your revision history will not be duplicated.",
+    "toSpace": "To space",
+    "copyToSpace": "Copy to space",
+    "duplicateBase": "Duplicate base",
+    "missTargetTip": "Please select a space to duplicate the base.",
+    "copying": "Duplicating base, it may take a while...",
+    "copyingTemplate": "Creating base from template, it may take a while...",
+    "howToCreate": "How do you want to start?",
+    "fromScratch": "From scratch",
+    "fromTemplate": "From template"
+  },
+  "spaceSetting": {
+    "title": "Settings",
+    "general": "General",
+    "collaborators": "Collaborators",
+    "generalDescription": "Change the settings for your current space here",
+    "collaboratorDescription": "Manage collaborators of your space and set their access permission",
+    "spaceName": "Space Name",
+    "spaceId": "Space ID",
+    "importBase": "Import"
+  },
+  "pin": {
+    "add": "Add to pin",
+    "remove": "Remove from pin",
+    "pin": "Pin",
+    "empty": "Your pined bases and space will appear here"
+  },
+  "tip": {
+    "delete": "Are you sure you want to delete <0/>?",
+    "title": "Tips",
+    "exportTips": "Exporting the database will export all data, including all records and attachments. The export process will be performed in the background, and you can download the exported file in the notification bar after completion. Note:\n1. All cross-base fields will be converted to single-line text fields."
+  },
+  "sharedBase": {
+    "title": "Shared bases",
+    "description": "Bases shared with you will appear here",
+    "empty": "No shared bases yet"
+  },
+  "integration": {
+    "title": "Integrations",
+    "description": "Manage integrations of your space",
+    "addIntegration": "Add integration",
+    "ai": "AI"
+  },
+  "import": {
+    "importing": "Importing",
+    "importWayTip": "Click or drag and drop the file to upload in this area",
+    "baseImportTips": "Click or drag and drop .tea file to upload in this area",
+    "confirm": "Confirm and continue"
+  },
+  "template": {
+    "title": "Template",
+    "description": "Create a new base from a template quickly"
+  }
+}
